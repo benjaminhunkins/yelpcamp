@@ -12,9 +12,6 @@ const User = require("./models/user");
 const indexRoutes = require("./routes/index"),
       commentRoutes = require("./routes/comments"),
       campgroundRoutes = require ("./routes/campgrounds");
-      
-// eslint-disable-next-line no-unused-vars
-const seedDB = require("./seeds");
 
 require('dotenv').config();
 app.set("view engine", "ejs");
@@ -48,9 +45,6 @@ app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   next();
 });
-
-// RESET AND SEED DB
-// seedDB();
 
 // ROUTING
 app.use(indexRoutes);

@@ -22,7 +22,7 @@ app.use(flash());
 app.use(methodOverride("_method"));
 
 mongoose.set('useFindAndModify', false);
-mongoose.connect("mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@cluster0-whbwu.mongodb.net/" + process.env.DB_NAME + "?retryWrites=true&w=majority", {useNewUrlParser:true});
+mongoose.connect(process.env.DB_URI, {useNewUrlParser:true});
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
